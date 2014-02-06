@@ -39,14 +39,15 @@
 <h4>
 <a name="diagnosis" class="anchor" href="#diagnosis"><span class="octicon octicon-link"></span></a>Diagnosis</h4>
 
-<p>Using <code>frank console</code> identify that the issue is being caused be an view that is animating unexpectedly by running: 
+<p>Using <code>frank console</code> I identified that the issue is being caused by an UIView that is animating unexpectedly by running: 
 <code>frankly_map "view", "isAnimating"</code></p>
 
 <p>This will return an array of <code>BOOL</code> variables. If this array contains a <code>True</code> then you have a view that is still animating. </p>
 
-<p>Next, run <code>frankly_map "view", "description"</code> which will list all views within the view hierarchy. Items that have an <code>animations</code> dictionary are likely to be animating. The output I got when inspecting UIRefreshControl was: </p>
+<p>Next, run <code>frankly_map "view", "description"</code> which will list all views within the view hierarchy. Items that have an <code>animations</code> dictionary are likely to be animating. </p>
 
-<p><code>"&lt;_UIRefreshControlModernReplicatorView: 0x8bab6e0; frame = (0 0; 100 100); animations = { instanceCount=&lt;CABasicAnimation: 0x8bae360&gt;; opacity=&lt;CABasicAnimation: 0x8ba6910&gt;; }; layer = &lt;CAReplicatorLayer..."</code></p>
+<p>The output I got when inspecting UIRefreshControl was: 
+<code>"&lt;_UIRefreshControlModernReplicatorView: 0x8bab6e0; frame = (0 0; 100 100); animations = { instanceCount=&lt;CABasicAnimation: 0x8bae360&gt;; opacity=&lt;CABasicAnimation: 0x8ba6910&gt;; }; layer = &lt;CAReplicatorLayer..."</code></p>
       </section>
       <footer>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
